@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/buttonbsedit"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="@string/recodtraderecord"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonbsedit"
+            style="@style/ButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/yellowbtn"
+            android:text="@string/recodedit" />
+
+     	<ListView
+     	    android:id="@+id/recordlistview"
+     	    android:layout_width="fill_parent"
+     	    android:layout_height="fill_parent"
+     	    android:layout_below="@+id/buttonbsedit"
+     	    android:layout_marginBottom="50dip"
+     	    android:background="@drawable/shape"
+     	    android:drawSelectorOnTop="false"
+     	     />
+		
+    </RelativeLayout>

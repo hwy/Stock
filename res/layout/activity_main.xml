@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="#6699FF"
+    android:gravity="center"
+    android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+    <EditText
+        android:id="@+id/editTextStockno"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ems="4"
+        android:hint="@string/tabstockcode"
+        android:maxLength="6"
+        android:selectAllOnFocus="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <TabHost
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/editTextStockno" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout01"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="a15088fd15f0cfa"
+        ads:loadAdOnCreate="true" >
+    </com.google.ads.AdView>
+
+    <ImageView
+        android:id="@+id/mainicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextStockno"
+        android:layout_toRightOf="@+id/mainicon"
+        android:text="@string/app_name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF" />
+
+    <Spinner
+        android:id="@+id/spinnerlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/editTextStockno"
+        android:background="#6699FF" />
+
+
+</RelativeLayout>

@@ -1,0 +1,142 @@
+<resources>
+
+    <string name="app_name">Stock</string>
+    <string name="title_activity_main">Stock</string>
+  <string name="pull_to_refresh_pull_label">Pull to refresh&#8230;</string>
+  <string name="pull_to_refresh_release_label">Release to Refresh&#8230;</string>
+  <string name="pull_to_refresh_tap_label">Tap to refresh&#8230;</string>
+  <string name="pull_to_refresh_refreshing_label">Loading&#8230;</string>
+  
+  
+  <style name="ButtonText">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">fill_parent</item>
+    <item name="android:textColor">#ffffff</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_margin">1dp</item>
+    <item name="android:textSize">20dp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:shadowColor">#000000</item>
+    <item name="android:shadowDx">1</item>
+    <item name="android:shadowDy">1</item>
+    <item name="android:shadowRadius">2</item>
+</style>
+
+      <string name="tabstockcode">Stock no.</string>
+      <string name="mainstockname">Name</string>
+       <string name="maintradeprice">Price</string>
+      <string name="mainchange">Change</string>
+       <string name="mainpl">P/L</string>
+      <string name="mainload">Loading....</string>
+       <string name="mainttlcaptial">Capital: </string>
+       <string name="mainnointernet">The device has no connection, make sure the device is connected to the Internet</string>
+       <string name="mainttlprofit">Profit: </string>
+       <string name="mainps">NOTICE</string>
+       
+      <string name="maintabprofolio">Portfolio</string>
+	<string name="maintabrecord">Records</string>
+	<string name="maintaballindex">Index</string>
+	<string name="maintabnocode">Can not find this stock number information</string>
+	<string name="maintablinking">Loading, Please wait</string>
+
+       
+       
+      <string name="recodedit">Edit</string>
+      <string name="recodfinish">Finish</string>
+      <string name="recodtraderecord">Buy/Sell Records</string>
+      <string name="recoddeletesus">Deleted Successfully</string>
+      <string name="recodrecord">Record</string>
+      
+      
+      
+       <string name="recoditembuy">Buy</string>
+       <string name="recoditemprice">Price</string>       
+       <string name="recoditemqty">Qty</string>      
+
+       <string name="stockdetailcodename">Stock NameNo</string>      
+       <string name="stockdetailnowprice">Price</string>      
+       <string name="stockdetailhig">High</string>      
+       <string name="stockdetaillow">Low</string>      
+       <string name="stockdetailopen">Open</string>      
+       <string name="stockdetailpopen">P Close</string>      
+       <string name="stockdetailtradevolume">Volume</string>      
+       <string name="stockdetailvalue">Market C.</string>      
+       <string name="stockdetailprofitperstock">EPS</string>      
+       <string name="stockdetail52whiglow">52wk Range</string>      
+       <string name="stockdetailbuy">Bid</string>      
+       <string name="stockdetailqty">QTY</string>      
+       <string name="stockdetailprice">Price</string> 
+       
+		<string name="stockchildopen">Open</string>
+        <string name="stockchildpopen">P Close</string>
+        <string name="stockchildbuy">Bid</string>
+        <string name="stockchildqty">QTY</string>
+        <string name="stockchildsellprice">Sell prices</string>
+        <string name="stockchildbuydate">Date</string>
+        <string name="stockchild52wp">52wk R.</string>
+        <string name="stockchilddp">Day R.</string>
+        <string name="stockchildedite">Edit</string>
+        <string name="stockchildsell">Sell</string>
+        
+        <string name="stockgroupname">Name</string>
+        
+        
+        <string name="indexhs">HANGSENG</string>
+        <string name="indexchina">HSCE Index</string>
+        <string name="indexred">HSCC Index</string>
+        <string name="indexszup">SSE Index</string>
+        <string name="indexszs">SZSE Index</string>
+        <string name="indexszy">CSI 300 </string>
+        <string name="indexdow">Dow Jones</string>
+        <string name="indexnaq">NASDAQ</string>
+        <string name="indexnor">S and P 500</string>
+	
+        
+        
+        <string name="expanablesellall">Sold all the stock！</string>
+        <string name="expanablereduce">stock reduction</string>
+        <string name="expanableentererror">Enter incorrect！  </string>
+        <string name="expanableeditesucess">Edited success！</string>
+       
+          
+        
+ 
+         
+	<string name="indexload">Loading</string>
+  
+	<string name="interneterror">Connection error, please try again later</string>
+        
+        <string name="indexhk">HongKong</string>
+        <string name="indexcn">China</string>
+        <string name="indexus">USA</string>
+
+ 
+                
+       <string name="chart1d">1D</string>      
+       <string name="chart5d">5D</string>       
+       <string name="chart1m">1M</string>
+       <string name="chart3m">3M</string>
+       <string name="chart6m">6M</string>
+       <string name="chart1y">1Y</string>
+       <string name="chart2y">2Y</string>
+       <string name="chart5y">5Y</string>
+       <string name="chartlarge">MAX</string>
+
+
+       <string name="wordcfmdel">Delete </string>
+       <string name="wordnotice">Notice</string>
+       <string name="wordcfm">Confirm</string>
+       <string name="wordcxl">Cancel</string>
+        
+       
+
+       <string-array name="location">
+		<item>HongKong</item>
+		<item>ShangHai</item>
+		<item>ShenZhen</item>
+		<item>USA</item>
+		<item>Taiwan</item>
+		</string-array>
+
+       
+</resources>

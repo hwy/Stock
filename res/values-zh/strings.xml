@@ -1,0 +1,142 @@
+<resources>
+
+    <string name="app_name">股票</string>
+    <string name="title_activity_main">股票</string>
+  <string name="pull_to_refresh_pull_label">下拉更新&#8230;</string>
+  <string name="pull_to_refresh_release_label">鬆開更新&#8230;</string>
+  <string name="pull_to_refresh_tap_label">點擊更新&#8230;</string>
+  <string name="pull_to_refresh_refreshing_label">載入中&#8230;</string>
+  
+  
+  <style name="ButtonText">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">fill_parent</item>
+    <item name="android:textColor">#ffffff</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_margin">1dp</item>
+    <item name="android:textSize">20dp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:shadowColor">#000000</item>
+    <item name="android:shadowDx">1</item>
+    <item name="android:shadowDy">1</item>
+    <item name="android:shadowRadius">2</item>
+</style>
+
+      <string name="tabstockcode">股票號</string>
+      <string name="mainstockname">股票名稱</string>
+       <string name="maintradeprice">成交價</string>
+      <string name="mainchange">改變</string>
+       <string name="mainpl">賺/蝕</string>
+      <string name="mainload">讀取中....</string>
+       <string name="mainttlcaptial">總資金: </string>
+       <string name="mainnointernet">裝置沒有連線,請確保有裝置連線到網上</string>
+       <string name="mainttlprofit">總利潤 : </string>
+       <string name="mainps">注意</string>
+       
+      <string name="maintabprofolio">投資組合</string>
+	<string name="maintabrecord">交易記錄</string>
+	<string name="maintaballindex">各大指數</string>
+	<string name="maintabnocode">找不到此股票號碼資料</string>
+	<string name="maintablinking">連線中,請稍等</string>
+
+       
+       
+      <string name="recodedit">編輯</string>
+      <string name="recodfinish">完成</string>
+      <string name="recodtraderecord">買賣紀錄</string>
+      <string name="recoddeletesus">"成功刪除"</string>
+      <string name="recodrecord">"記錄"</string>
+      
+      
+      
+       <string name="recoditembuy">購入</string>
+       <string name="recoditemprice">股價</string>       
+       <string name="recoditemqty">股數</string>      
+
+       <string name="stockdetailcodename">股票號及名</string>      
+       <string name="stockdetailnowprice">當前價格</string>      
+       <string name="stockdetailhig">高</string>      
+       <string name="stockdetaillow">低</string>      
+       <string name="stockdetailopen">開市</string>      
+       <string name="stockdetailpopen">前收市</string>      
+       <string name="stockdetailtradevolume">成交量</string>      
+       <string name="stockdetailvalue">市值</string>      
+       <string name="stockdetailprofitperstock">每股盈利</string>      
+       <string name="stockdetail52whiglow">52周最高/最底</string>      
+       <string name="stockdetailbuy">買入</string>      
+       <string name="stockdetailqty">股數</string>      
+       <string name="stockdetailprice">股價</string> 
+       
+		<string name="stockchildopen">開市</string>
+        <string name="stockchildpopen">前收市</string>
+        <string name="stockchildbuy">購入價</string>
+        <string name="stockchildqty">持股數</string>
+        <string name="stockchildsellprice">賣出格價</string>
+        <string name="stockchildbuydate">購入日期</string>
+        <string name="stockchild52wp">52周波幅</string>
+        <string name="stockchilddp">今日波幅</string>
+        <string name="stockchildedite">修正</string>
+        <string name="stockchildsell">賣出</string>
+        
+        <string name="stockgroupname">股票名</string>
+        
+        
+        <string name="indexhs">恆生指數</string>
+        <string name="indexchina">國企指數</string>
+        <string name="indexred">紅籌指數</string>
+        <string name="indexszup">上証指數</string>
+        <string name="indexszs">深成指</string>
+        <string name="indexszy">滬深</string>
+        <string name="indexdow">道瓊斯</string>
+        <string name="indexnaq">納斯達克</string>
+        <string name="indexnor">標普</string>
+	
+        
+        
+        <string name="expanablesellall">賣出全部股份！</string>
+        <string name="expanablereduce">減持</string>
+        <string name="expanableentererror">輸入不正確！  </string>
+        <string name="expanableeditesucess">修正成功！</string>
+       
+          
+        
+ 
+         
+	<string name="indexload">讀取中</string>
+  
+	<string name="interneterror">連線出現問題,請稍後再試</string>
+        
+        <string name="indexhk">香港指數</string>
+        <string name="indexcn">中國指數</string>
+        <string name="indexus">美國指數</string>
+
+ 
+                
+       <string name="chart1d">1日</string>      
+       <string name="chart5d">5日</string>       
+       <string name="chart1m">1個月</string>
+       <string name="chart3m">3個月</string>
+       <string name="chart6m">6個月</string>
+       <string name="chart1y">1年</string>
+       <string name="chart2y">2年</string>
+       <string name="chart5y">5年</string>
+       <string name="chartlarge">最大</string>
+
+
+       <string name="wordcfmdel">確認刪除</string>
+       <string name="wordnotice">提示</string>
+       <string name="wordcfm">確認</string>
+       <string name="wordcxl">取消</string>
+        
+       
+
+       <string-array name="location">
+		<item>香港</item>
+		<item>上海</item>
+		<item>深圳</item>
+		<item>美國</item>
+		<item>台灣</item>
+		</string-array>
+
+       
+</resources>

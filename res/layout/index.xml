@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+            <ScrollView android:id="@+id/scrollView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dip" 
+                 xmlns:android1="http://schemas.android.com/apk/res/android" xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+     >
+
+    <TextView
+        android:id="@+id/textViewindexname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonhk"
+        android:text="@string/indexhs"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+       <TextView
+           android:id="@+id/textViewhsiindex"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/buttoncn"
+           android:layout_centerHorizontal="true"
+           android:text="00000.000"
+           android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textViewindexchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textViewhsiindex"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/textViewhsiindex"
+                android:gravity="center"
+                android:text="00.000(00.00%)"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+    
+        <TextView
+            android:id="@+id/textViewchartperiod1dindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewindexname"
+            android:text="@string/chart1d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:id="@+id/textViewchartperiod5dindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1dindex"
+            android:layout_toRightOf="@+id/textViewchartperiod1dindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chart5d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+        
+        
+                <TextView
+            android:id="@+id/textViewchartperiod1mindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod5dindex"
+            android:layout_toRightOf="@+id/textViewchartperiod5dindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chart1m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+                
+		 <TextView
+            android:id="@+id/textViewchartperiod3mindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1mindex"
+            android:layout_toRightOf="@+id/textViewchartperiod1mindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chart3m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod6mindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod3mindex"
+            android:layout_toRightOf="@+id/textViewchartperiod3mindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chart6m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />		 
+
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod1yindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod6mindex"
+            android:layout_toRightOf="@+id/textViewchartperiod6mindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chart1y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />		
+            
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod2yindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1yindex"
+            android:layout_toRightOf="@+id/textViewchartperiod1yindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chart2y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />	
+            
+		 
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod5yindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod2yindex"
+            android:layout_toRightOf="@+id/textViewchartperiod2yindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chart5y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />	
+
+		 
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiodmyindex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod5yindex"
+            android:layout_toRightOf="@+id/textViewchartperiod5yindex"
+            android:paddingLeft="5dip"
+            android:text="@string/chartlarge"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+    
+		 
+		 
+
+
+
+            <ImageView
+                android:id="@+id/imageViewchartindex"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/textViewchartperiod1dindex"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible" />
+            
+            
+            <ProgressBar
+        android:id="@+id/progressBarloadindex"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewchartperiod1dindex"
+        android:layout_centerHorizontal="true" />
+     
+    <TextView
+        android:id="@+id/textViewindexname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageViewchartindex"
+        android:text="@string/indexchina"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+       <TextView
+           android:id="@+id/textViewhsiindex2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/textViewindexname2"
+           android:layout_centerHorizontal="true"
+           android:text="00000.000"
+           android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textViewindexchange2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textViewhsiindex2"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/textViewhsiindex2"
+                android:gravity="center"
+                android:text="00.000(00.00%)"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+    
+        <TextView
+            android:id="@+id/textViewchartperiod1dindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewindexname2"
+            android:text="@string/chart1d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:id="@+id/textViewchartperiod5dindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1dindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod1dindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chart5d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+        
+        
+                <TextView
+            android:id="@+id/textViewchartperiod1mindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod5dindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod5dindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chart1m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+                
+		 <TextView
+            android:id="@+id/textViewchartperiod3mindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1mindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod1mindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chart3m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod6mindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod3mindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod3mindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chart6m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />		 
+
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod1yindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod6mindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod6mindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chart1y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />		
+            
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod2yindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1yindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod1yindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chart2y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />	
+            
+		 
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod5yindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod2yindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod2yindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chart5y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />	
+
+		 
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiodmyindex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod5yindex2"
+            android:layout_toRightOf="@+id/textViewchartperiod5yindex2"
+            android:paddingLeft="5dip"
+            android:text="@string/chartlarge"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+    
+		 
+		 
+
+
+
+            <ImageView
+                android:id="@+id/imageViewchartindex2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/textViewchartperiod1dindex2"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible" />
+            
+            
+            <ProgressBar
+        android:id="@+id/progressBarloadindex2"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewchartperiod1dindex2"
+        android:layout_centerHorizontal="true" />
+            
+    <TextView
+        android:id="@+id/textViewindexname3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageViewchartindex2"
+        android:text="@string/indexred"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+       <TextView
+           android:id="@+id/textViewhsiindex3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/textViewindexname3"
+           android:layout_centerHorizontal="true"
+           android:text="00000.000"
+           android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/textViewindexchange3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textViewhsiindex3"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/textViewhsiindex3"
+                android:gravity="center"
+                android:text="00.000(00.00%)"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFFFFF" />
+    
+        <TextView
+            android:id="@+id/textViewchartperiod1dindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewindexname3"
+            android:text="@string/chart1d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:id="@+id/textViewchartperiod5dindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1dindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod1dindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chart5d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+        
+        
+                <TextView
+            android:id="@+id/textViewchartperiod1mindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod5dindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod5dindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chart1m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+                
+		 <TextView
+            android:id="@+id/textViewchartperiod3mindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1mindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod1mindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chart3m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod6mindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod3mindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod3mindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chart6m"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />		 
+
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod1yindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod6mindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod6mindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chart1y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />		
+            
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod2yindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1yindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod1yindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chart2y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />	
+            
+		 
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiod5yindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod2yindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod2yindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chart5y"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />	
+
+		 
+		 
+		 <TextView
+            android:id="@+id/textViewchartperiodmyindex3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod5yindex3"
+            android:layout_toRightOf="@+id/textViewchartperiod5yindex3"
+            android:paddingLeft="5dip"
+            android:text="@string/chartlarge"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+    
+		 
+		 
+
+
+
+            <ImageView
+                android:id="@+id/imageViewchartindex3"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/textViewchartperiod1dindex3"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible" />
+            
+            
+            <ProgressBar
+        android:id="@+id/progressBarloadindex3"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewchartperiod1dindex3"
+        android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/buttonhk"
+                style="@style/ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/yellowbtn"
+                android:minEms="4"
+                android:text="@string/indexhk" />
+
+<Button
+    android:id="@+id/buttoncn"
+    style="@style/ButtonText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/bluebtn"
+    android:minEms="4"
+    android:text="@string/indexcn" />
+
+            <Button
+                android:id="@+id/buttonus"
+                style="@style/ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/bluebtn"
+                android:minEms="4"
+                android:text="@string/indexus" />
+         
+</RelativeLayout>
+      </ScrollView>

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textViewstockname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewtime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/textViewhighprice"
+        android:background="#6699FF"
+        android:gravity="center_vertical"
+        android:height="20dp"
+        android:text="@string/stockdetailcodename"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textViewcurrentprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewstockchangepercent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textViewstockname"
+        android:gravity="center"
+        android:paddingLeft="10dip"
+        android:text="@string/stockdetailnowprice"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewchangeprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewstockname"
+        android:layout_centerHorizontal="true"
+        android:background="#00cc00"
+        android:gravity="right"
+        android:minEms="3"
+        android:scrollHorizontally="true"
+        android:text="+0.00"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewhighprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewtime"
+        android:gravity="right"
+        android:minEms="3"
+        android:text="000.00"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewlowprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewstockchangepercent"
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:minEms="3"
+        android:text="000.00"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewstockname"
+        android:layout_toLeftOf="@+id/textViewhighprice"
+        android:text="@string/stockdetailhig"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewlowprice"
+        android:layout_alignBottom="@+id/textViewlowprice"
+        android:layout_toLeftOf="@+id/textViewlowprice"
+        android:text="@string/stockdetaillow"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_below="@+id/textViewcurrentprice"
+        android:text="@string/stockdetailopen"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView3"
+        android:text="@string/stockdetailpopen"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewopenprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:gravity="right"
+        android:text="000.000"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewyopenprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toRightOf="@+id/textView4"
+        android:gravity="right"
+        android:text="000.000"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewopenprice"
+        android:layout_alignBottom="@+id/textViewopenprice"
+        android:layout_centerHorizontal="true"
+        android:text="@string/stockdetailtradevolume"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewyopenprice"
+        android:layout_alignBottom="@+id/textViewyopenprice"
+        android:layout_centerHorizontal="true"
+        android:text="@string/stockdetailvalue"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#6699FF"
+        android:gravity="right"
+        android:maxEms="5"
+        android:minEms="4"
+        android:minHeight="25dp"
+        android:text="2008-01-11"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textViewtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewdate"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewdate"
+        android:background="#6699FF"
+        android:gravity="right"
+        android:maxEms="4"
+        android:minEms="4"
+        android:minHeight="25dp"
+        android:text="00:00AM"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textViewstockchangepercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewchangeprice"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00cc00"
+        android:gravity="right"
+        android:minEms="3"
+        android:text="+0.000"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textViewttvolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView5"
+        android:maxEms="4"
+        android:minEms="4"
+        android:text="000.000M"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewmarketcap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignLeft="@+id/textViewttvolume"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView6"
+        android:maxEms="4"
+        android:minEms="4"
+        android:text="000.00M"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView4"
+        android:text="P/E"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewpe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignTop="@+id/textView8"
+        android:layout_toRightOf="@+id/textView4"
+        android:text="000.000"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewyopenprice"
+        android:layout_centerHorizontal="true"
+        android:text="@string/stockdetailprofitperstock"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textViewprofit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewmarketcap"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView8"
+        android:text="000.0000"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView7"
+        android:text="@string/stockdetail52whiglow"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView52hl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView10"
+        android:layout_toRightOf="@+id/textView10"
+        android:paddingLeft="20dip"
+        android:text="000.000/000.000"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+<Button
+    android:id="@+id/buttonstockadd"
+    style="@style/ButtonText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/imageViewchart"
+    android:layout_marginRight="10dip"
+    android:background="@drawable/bluebtn"
+    android:minEms="4"
+    android:text="@string/stockdetailbuy" />
+
+    <EditText
+        android:id="@+id/editTextqty"
+        android:layout_width="wrap_content"
+        android:layout_height="36dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageViewchart"
+        android:layout_marginLeft="10dip"
+        android:hint="@string/stockdetailqty"
+        android:inputType="number"
+        android:maxEms="4"
+        android:minEms="4"
+        android:nextFocusDown="@+id/editTextstockprice" >
+
+        <requestFocus />       
+    </EditText>
+    
+    <EditText
+        android:id="@+id/editTextstockprice"
+        android:layout_width="wrap_content"
+        android:layout_height="36dip"
+        android:layout_below="@+id/imageViewchart"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/stockdetailprice"
+        android:inputType="numberDecimal"
+        android:maxEms="4"
+        android:minEms="4" />
+
+            <ImageView
+                android:id="@+id/imageViewchart"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/textViewchartperiod1d"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible" />
+            
+            
+            <ProgressBar
+        android:id="@+id/progressBarload"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewchartperiod1d"
+        android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:id="@+id/imageViewclose"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/redclose" />
+            
+        <TextView
+            android:id="@+id/textViewchartperiod1d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView52hl"
+            android:text="@string/chart1d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textViewchartperiod5d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewchartperiod1d"
+            android:layout_toRightOf="@+id/textViewchartperiod1d"
+            android:paddingLeft="5dip"
+            android:text="@string/chart5d"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000" />
+        
+                <TextView
+                    android:id="@+id/textViewchartperiod1m"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textViewchartperiod5d"
+                    android:layout_toRightOf="@+id/textViewchartperiod5d"
+                    android:paddingLeft="5dip"
+                    android:text="@string/chart1m"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#000000" />
+                
+		 <TextView
+		     android:id="@+id/textViewchartperiod3m"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:layout_alignBottom="@+id/textViewchartperiod1m"
+		     android:layout_toRightOf="@+id/textViewchartperiod1m"
+		     android:paddingLeft="5dip"
+		     android:text="@string/chart3m"
+		     android:textAppearance="?android:attr/textAppearanceSmall"
+		     android:textColor="#000000" />
+		 
+		 <TextView
+		     android:id="@+id/textViewchartperiod6m"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:layout_alignBottom="@+id/textViewchartperiod3m"
+		     android:layout_toRightOf="@+id/textViewchartperiod3m"
+		     android:paddingLeft="5dip"
+		     android:text="@string/chart6m"
+		     android:textAppearance="?android:attr/textAppearanceSmall"
+		     android:textColor="#000000" />
+		 
+		 <TextView
+		     android:id="@+id/textViewchartperiod1y"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:layout_alignBottom="@+id/textViewchartperiod6m"
+		     android:layout_toRightOf="@+id/textViewchartperiod6m"
+		     android:paddingLeft="5dip"
+		     android:text="@string/chart1y"
+		     android:textAppearance="?android:attr/textAppearanceSmall"
+		     android:textColor="#000000" />
+		 
+		 <TextView
+		     android:id="@+id/textViewchartperiod2y"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:layout_alignBottom="@+id/textViewchartperiod1y"
+		     android:layout_toRightOf="@+id/textViewchartperiod1y"
+		     android:paddingLeft="5dip"
+		     android:text="@string/chart2y"
+		     android:textAppearance="?android:attr/textAppearanceSmall"
+		     android:textColor="#000000" />
+		 
+		 <TextView
+		     android:id="@+id/textViewchartperiod5y"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:layout_alignBottom="@+id/textViewchartperiod2y"
+		     android:layout_toRightOf="@+id/textViewchartperiod2y"
+		     android:paddingLeft="5dip"
+		     android:text="@string/chart5y"
+		     android:textAppearance="?android:attr/textAppearanceSmall"
+		     android:textColor="#000000" />
+		 
+		 <TextView
+		     android:id="@+id/textViewchartperiodmy"
+		     android:layout_width="wrap_content"
+		     android:layout_height="wrap_content"
+		     android:layout_alignBottom="@+id/textViewchartperiod5y"
+		     android:layout_toRightOf="@+id/textViewchartperiod5y"
+		     android:paddingLeft="5dip"
+		     android:text="@string/chartlarge"
+		     android:textAppearance="?android:attr/textAppearanceSmall"
+		     android:textColor="#000000" />
+			 		 			 		 		 
+</RelativeLayout>
