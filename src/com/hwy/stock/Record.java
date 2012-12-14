@@ -163,8 +163,8 @@ public class Record extends Activity {
 				}else if(clist2.getString(2).equals("4")){
 					temp.put("Type", Record.this.getString(R.string.expanablereduce));
 					temp.put("Bsprice", String.format("%.2f", clist2.getFloat(5)));
-					int p =Integer.parseInt(clist2.getString(5))-Integer.parseInt(clist2.getString(4))*Integer.parseInt(clist2.getString(3));
-					temp.put("Bsprofit", Integer.toString(p));
+					Float p =(clist2.getFloat(5)-clist2.getFloat(4))*clist2.getFloat(3);
+					temp.put("Bsprofit", String.format("%.2f", p));
 				}else {
 					temp.put("Type", Record.this.getString(R.string.recodedit));
 					temp.put("Bsprice", String.format("%.2f", clist2.getFloat(4)));
