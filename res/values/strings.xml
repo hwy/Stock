@@ -60,7 +60,7 @@
        <string name="stockdetailopen">Open</string>      
        <string name="stockdetailpopen">P Close</string>      
        <string name="stockdetailtradevolume">Volume</string>      
-       <string name="stockdetailvalue">Market C.</string>      
+       <string name="stockdetailvalue">MktCap</string>      
        <string name="stockdetailprofitperstock">EPS</string>      
        <string name="stockdetail52whiglow">52wk Range</string>      
        <string name="stockdetailbuy">Bid</string>      
@@ -104,7 +104,7 @@
          
 	<string name="indexload">Loading</string>
   
-	<string name="interneterror">Connection error, please try again later</string>
+	<string name="interneterror">Connection error or Wrong Stock no., please try again later</string>
         
         <string name="indexhk">HongKong</string>
         <string name="indexcn">China</string>
@@ -131,10 +131,11 @@
        
 
        <string-array name="location">
+           
 		<item>HongKong</item>
+		<item>USA</item>
 		<item>ShangHai</item>
 		<item>ShenZhen</item>
-		<item>USA</item>
 		<item>Taiwan</item>
 		</string-array>
 

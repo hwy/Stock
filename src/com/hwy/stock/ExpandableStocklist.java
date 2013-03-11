@@ -266,6 +266,7 @@ String Changeprice = groups.get(groupPosition).get("Changeprice");
 String Changepercent = groups.get(groupPosition).get("Changepercent");
 String Profit = groups.get(groupPosition).get("Profit");
 String profitpercent = groups.get(groupPosition).get("profitpercent");
+String greenredcolor = groups.get(groupPosition).get("greenredcolor");
 
 
 LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -293,13 +294,13 @@ textViewaprofitpercent.setText(profitpercent);
 
 
 //set rase & drop color
-if(Changeprice.contains("+")){
+if(greenredcolor.contains("+")){
 	textViewnowprice.setTextColor(Color.GREEN);
 	textViewStockChangeprice.setBackgroundColor(Color.GREEN);
 	textViewStockChangepercent.setBackgroundColor(Color.GREEN);
 	textViewStockChangepercent.setTextColor(Color.WHITE);
 	textViewStockChangeprice.setTextColor(Color.WHITE);
-}else if(Changeprice.contains("-")){
+}else if(greenredcolor.contains("-")){
 	textViewnowprice.setTextColor(Color.RED);
 	textViewStockChangeprice.setBackgroundColor(Color.RED);
 	textViewStockChangepercent.setBackgroundColor(Color.RED);	

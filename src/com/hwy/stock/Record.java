@@ -148,19 +148,20 @@ public class Record extends Activity {
 				temp.put("Stockno",clist2.getString(1));
 				temp.put("Date", clist2.getString(6));
 				
-				if(clist2.getString(2).equals("1")){
+
+				if(clist2.getString(2).trim().equals("1")){
 					temp.put("Type", Record.this.getString(R.string.recoditembuy));
 					temp.put("Bsprice", String.format("%.2f", clist2.getFloat(4)));
-				}else if(clist2.getString(2).equals("2")){
+				}else if(clist2.getString(2).trim().equals("2")){
 					temp.put("Type", Record.this.getString(R.string.stockchildsell));
 					temp.put("Bsprice", String.format("%.2f", clist2.getFloat(5)));
-					Float p =(clist2.getFloat(5)-clist2.getFloat(4))*clist2.getFloat(3);
+					int p =Math.round((Float.parseFloat(clist2.getString(5))-Float.parseFloat(clist2.getString(4)))*Float.parseFloat(clist2.getString(3)));
 					if(p>0){
 					temp.put("Bsprofit", "+"+p);
 					}else if (p<0){
 					temp.put("Bsprofit", ""+p);	
 					}
-				}else if(clist2.getString(2).equals("4")){
+				}else if(clist2.getString(2).trim().equals("4")){
 					temp.put("Type", Record.this.getString(R.string.expanablereduce));
 					temp.put("Bsprice", String.format("%.2f", clist2.getFloat(5)));
 					Float p =(clist2.getFloat(5)-clist2.getFloat(4))*clist2.getFloat(3);
@@ -174,7 +175,7 @@ public class Record extends Activity {
 				list.add(temp);
 			
 			}
-
+			clist2.close();
 	}
 	
 	

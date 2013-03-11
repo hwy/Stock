@@ -7,15 +7,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -103,10 +102,11 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
     		}
   		
 		//prevent thread url error
+  		if (android.os.Build.VERSION.SDK_INT >= 9) { 
 		StrictMode.ThreadPolicy policy = new StrictMode.
 		ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy); 
-		
+  		}
 		/** TabHost will have Tabs */
 		tabHost = (TabHost) findViewById(android.R.id.tabhost);
 
@@ -164,7 +164,9 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
 						local = position;
 						EditText editTextStockno = (EditText) findViewById(R.id.editTextStockno);
 						
-					if(position==3){
+						
+					if(position==1){
+						
 						editTextStockno.setInputType(InputType.TYPE_CLASS_TEXT);
 					}else{
 						editTextStockno.setInputType(InputType.TYPE_CLASS_PHONE);
@@ -246,7 +248,7 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
 
 	
 	
-	public String loadstock(String stockno) {
+	public String loadstock(String stocknotem) {
         //nameValuePairs.add(new BasicNameValuePair("Stock", stockno));
 
 		
@@ -256,47 +258,63 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
 		
 		  switch(local){
       	case 0:{
-      		stockno = stockno.replaceAll("\\D+","");
+      		stocknotem = stocknotem.replaceAll("\\D+","");
 
-      		finalstockno = String.format("%04d", Integer.parseInt(stockno));
+      		finalstockno = String.format("%04d", Integer.parseInt(stocknotem));
       		localcode="hk";
+  		  stockno =finalstockno+"."+localcode;
+
       		break;
       	}
       	case 1:{
-      		stockno = stockno.replaceAll("\\D+","");
-
-      		finalstockno = String.format("%06d", Integer.parseInt(stockno));
-      		localcode="ss";
-      		break;
-      	}
-      	case 2:{
-      		stockno = stockno.replaceAll("\\D+","");
-
-      		finalstockno = String.format("%06d", Integer.parseInt(stockno));
-      		localcode="sz";
-      		break;
-      	}
-      	case 3:{
-      		finalstockno =stockno;
-      		localcode="";
       		
-      		break;
-      	}case 4:{
-      		stockno = stockno.replaceAll("\\D+","");
+      		finalstockno =stocknotem;
+      		localcode="";
+  		  stockno =finalstockno;
 
-      		finalstockno = String.format("%04d", Integer.parseInt(stockno));
+      		break;
+      	}
+
+      	case 2:{
+
+      		stocknotem = stocknotem.replaceAll("\\D+","");
+
+      		finalstockno = String.format("%06d", Integer.parseInt(stocknotem));
+      		localcode="ss";
+  		  stockno =finalstockno+"."+localcode;
+     		
+      		break;   	}
+      	case 3:{
+      		stocknotem = stocknotem.replaceAll("\\D+","");
+      		finalstockno = String.format("%06d", Integer.parseInt(stocknotem));
+      		localcode="sz";
+  		  stockno =finalstockno+"."+localcode;
+
+      		break;
+      	}
+      	case 4:{
+      		stocknotem = stocknotem.replaceAll("\\D+","");
+
+      		finalstockno = String.format("%04d", Integer.parseInt(stocknotem));
       		localcode="tw";
+  		  stockno =finalstockno+"."+localcode;
+
       		break;
       	}
       	default: 
       		localcode="hk";
-      		finalstockno = String.format("%04d", Integer.parseInt(stockno));
+      		finalstockno = String.format("%04d", Integer.parseInt(stocknotem));
+  		  stockno =finalstockno+"."+localcode;
 		  }
+      	System.out.println(stockno);
       	
-        
-		String Stocklink="http://hk.finance.yahoo.com/d/quotes.csv?s="+finalstockno+"."+localcode+"&lang=zh-Hant-HK&region=HK&f=snd1t1l1c6p2hgopvj1rew&d=t";
+      	String Stocklink="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fhk.finance.yahoo.com%2Fquotes%2F"+stockno+"%2Fview%2Fdv%22%20and%20xpath%3D'%2F%2Fdiv%5B%40id%3D%22yfi_summary_table_container%22%5D%2F%2Fh2%7C%2F%2Fdiv%5B%40class%3D%22table%22%5D%2F%2Ftable%2Ftr%2Ftd%5Bnot(contains(.%2C%5C'x%5C'))%5D%2F%2Ftext()'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+      	
+		//String Stocklink="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fhk.finance.yahoo.com%2Fq%3Fs%3D"+stockno+"%22%20and%20xpath%3D'%2F%2Fdiv%5B%40class%3D%22title%22%5D%2F%2Fh2%7C%2F%2Fdiv%5B%40class%3D%22yfi_rt_quote_summary_rt_top%22%5D%2F%2Fspan%2F%2Ftext()%7C%2F%2Fdiv%5B%40id%3D%22yfi_quote_summary_data%22%5D%2F%2Ftd%2F%2Ftext()'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+			//"http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fhk.finance.yahoo.com%2Fquotes%2F"+finalstockno+"."+localcode+"%2Fview%2Fdv%22%20and%20xpath%3D'%2F%2Fdiv%5B%40id%3D%22yfi_summary_table_container%22%5D%2F%2Fh2%7C%2F%2Fdiv%5B%40class%3D%22table%22%5D%2F%2Ftable%2F%2Ftr%2F%2Ftd%2F%2Ftext()'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+			//"http://hk.finance.yahoo.com/d/quotes.csv?s="+finalstockno+"."+localcode+"&lang=zh-Hant-HK&region=HK&f=snd1t1l1c6p2hgopvj1rew&d=t";
 			//"http://hq.sinajs.cn/list="+localcode+finalstockno;
-		
+		System.out.println(Stocklink);
 		 InputStream is = null;
 		 String result;
  	    //http post
@@ -323,18 +341,30 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
  	                    sb.append(line + "\n");
  	            }
  	            is.close();
- 	            result=sb.toString().trim();
-
- 	        //   String regexp = "var.*?=\"";
- 	         // String replace = "";
- 	        // result=result.replaceAll(regexp, replace);
- 	           result= result.replaceAll("\"", "");
- 	 	         
-			 	System.out.println(result);   
- 
+ 	            result=sb.toString().trim();	
+ 	            
+ 	           System.out.println(result);
+ 	           
+			    try { 
+			    	
+			    	JSONObject jsonResponse = new JSONObject(result).getJSONObject("query");
+			    	JSONObject returnresult = jsonResponse.getJSONObject("results");
+			    	String retem = returnresult.getString("h2").replaceAll("\\p{P}", " ");
+			    	
+			    	result = returnresult.getString("content");
+	 	           result= retem+result.replaceAll(" ", "").replaceAll("\\n+","XX").replaceAll("ㄳ퐸Ξㄳ퐸Ξ","ㄳ퐸ΞXXㄳ퐸Ξ").replaceAll("ㄳ퐸Ξ-ㄳ퐸Ξ","ㄳ퐸ΞXX-XXㄳ퐸Ξ");
+		 	 	    //   result=result.replaceAll("XX-XX", "-");
+	 	          result.substring(0, result.length() - 2);
+	 	          	 	          
+		        } catch (JSONException e) {   
+		            System.out.println("Json parse error"+e);   
+		            e.printStackTrace();   
+		            result = "error";
+		        }  
+		        
  	    }catch(Exception e){
  	    	removeDialog(0);
- 	    	  Toast.makeText(this,MainTab.this.getString(R.string.interneterror), Toast.LENGTH_LONG).show();
+ 	    	//  Toast.makeText(this,MainTab.this.getString(R.string.interneterror), Toast.LENGTH_LONG).show();
 		 	  result = "error";
  	    	  System.out.println(e);
  	    }
@@ -345,127 +375,115 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
 	
 	
 	public void showstockdialog (String stockdetail){
-		/*
-		if(localcode.equals("sh")){
-			localcode="ss";
-		}else if(localcode.equals("hk")){
-			stockdetail=stockdetail.replaceFirst(",", "\n");
-		}
-		*/
+
+		System.out.println(stockdetail);
+
+		String[] stocksplit = stockdetail.split("XX");
 		
-		String[] stocksplit = stockdetail.split(",");
-			
-		
-		if(!stocksplit[2].equals("N/A")) {
+
 		dialogmsg = new Dialog(MainTab.this);
 		dialogmsg.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialogmsg.setContentView(R.layout.stcokdetail);
 		
+		System.out.println(stocksplit.length+"aaaa");
 		
-		stockno=stocksplit[0];
-		
+		if(stocksplit.length>17){
 		// set the custom dialogmsg components - text
 		TextView textViewstockname = (TextView) dialogmsg.findViewById(R.id.textViewstockname);
-		textViewstockname.setText(stocksplit[0]+"\n"+stocksplit[1]);
+		textViewstockname.setText(stockno+"\n"+stocksplit[0]);
 		
 		//open price
 		TextView textViewopenprice = (TextView) dialogmsg.findViewById(R.id.textViewopenprice);
-		textViewopenprice.setText(stocksplit[9]);
+		textViewopenprice.setText(stocksplit[12]);
 
-		
 		//change price
 		TextView textViewchangeprice = (TextView) dialogmsg.findViewById(R.id.textViewchangeprice);
-		textViewchangeprice.setText(stocksplit[5]);
+		textViewchangeprice.setText(stocksplit[7]);
 
 		
 		
 		//change %
 		TextView textViewstockchangepercent = (TextView) dialogmsg.findViewById(R.id.textViewstockchangepercent);
-		textViewstockchangepercent.setText(stocksplit[6]);
-
-		
-	
+		textViewstockchangepercent.setText(stocksplit[8]);
 		
 		//yetserday price
 		TextView textViewyopenprice = (TextView) dialogmsg.findViewById(R.id.textViewyopenprice);
 		textViewyopenprice.setText(stocksplit[10]);
 
-		
 		//current price
 		TextView textViewcurrentprice = (TextView) dialogmsg.findViewById(R.id.textViewcurrentprice);
-		textViewcurrentprice.setText(stocksplit[4]);
+		textViewcurrentprice.setText(stocksplit[1]);
 
 		
 		//set rase & drop color
-		if(stocksplit[5].contains("+")){
+		if(stocksplit[8].contains("+")){
 			textViewcurrentprice.setTextColor(Color.GREEN);
 			textViewchangeprice.setBackgroundColor(Color.GREEN);
 			textViewstockchangepercent.setBackgroundColor(Color.GREEN);
 			textViewchangeprice.setTextColor(Color.WHITE);
 			textViewstockchangepercent.setTextColor(Color.WHITE);
-
-		}else if(stocksplit[5].contains("-")){
+		
+		}else if(stocksplit[8].contains("-")){
 			textViewcurrentprice.setTextColor(Color.RED);
 			textViewchangeprice.setBackgroundColor(Color.RED);
 			textViewstockchangepercent.setBackgroundColor(Color.RED);
 			textViewchangeprice.setTextColor(Color.WHITE);
 			textViewstockchangepercent.setTextColor(Color.WHITE);
-
-		}
+			}
 		
 		// high price
 		TextView textViewhighprice = (TextView) dialogmsg.findViewById(R.id.textViewhighprice);
-		textViewhighprice.setText(stocksplit[7]);
+		textViewhighprice.setText(stocksplit[4]);
 
 		//low price
 		TextView textViewlowprice = (TextView) dialogmsg.findViewById(R.id.textViewlowprice);
-		textViewlowprice.setText(stocksplit[8]);
+		textViewlowprice.setText(stocksplit[2]);
 		
-
+		try{
 		//volume
 		TextView textViewttvolume = (TextView) dialogmsg.findViewById(R.id.textViewttvolume);
-		textViewttvolume.setText(""+Integer.parseInt(stocksplit[11])/10000+"M");
+		textViewttvolume.setText(""+Math.round(Float.parseFloat(stocksplit[9].replaceAll(",",""))/10000)+"M");
+		} catch (Exception e) {
+		//volume
+		TextView textViewttvolume = (TextView) dialogmsg.findViewById(R.id.textViewttvolume);
+		textViewttvolume.setText("???");
+		}
 		
-		//market cap
-		TextView textViewmarketcap = (TextView) dialogmsg.findViewById(R.id.textViewmarketcap);
-		textViewmarketcap.setText(stocksplit[12]);
-	
+		try{
+		//Market Cap:
+		TextView textViewmarketdivy = (TextView) dialogmsg.findViewById(R.id.textViewmarketdivy);
+		textViewmarketdivy.setText(stocksplit[13]);
+		} catch (Exception e) {
+			TextView textViewmarketdivy = (TextView) dialogmsg.findViewById(R.id.textViewmarketdivy);
+			textViewmarketdivy.setText("???");
+		}
 		//last trade date
-		TextView textViewdate = (TextView) dialogmsg.findViewById(R.id.textViewdate);
-		textViewdate.setText(stocksplit[2]);
-
-		SimpleDateFormat  df=new SimpleDateFormat("h:mma Z");
-
-		   try {
-			   Date dt=df.parse(stocksplit[3]+" -0500");
-
-			   df.setTimeZone(TimeZone.getDefault());
-				//time
-				TextView textViewtime = (TextView) dialogmsg.findViewById(R.id.textViewtime);
-				textViewtime.setText(df.format(dt).toString().substring(0,7));
-
-		   }  catch( Exception e ) {
-				TextView textViewtime = (TextView) dialogmsg.findViewById(R.id.textViewtime);
-				textViewtime.setText(stocksplit[3]);
-               e.printStackTrace();
-           }
-		
-		
+		TextView textViewtime = (TextView) dialogmsg.findViewById(R.id.textViewtime);
+		textViewtime.setText(stocksplit[5]);
 
 		
+
+		try{
 		//pe
 		TextView textViewpe = (TextView) dialogmsg.findViewById(R.id.textViewpe);
-		textViewpe.setText(stocksplit[13]);
+		textViewpe.setText(stocksplit[14]);
 
 		
-		//Profit
+		//Profit EPS
 		TextView textViewprofit = (TextView) dialogmsg.findViewById(R.id.textViewprofit);
-		textViewprofit.setText(stocksplit[14]);
-
+		textViewprofit.setText(stocksplit[15]);
+		} catch (Exception e) {
+			TextView textViewpe = (TextView) dialogmsg.findViewById(R.id.textViewpe);
+			textViewpe.setText("???");
+			
+			//Profit
+			TextView textViewprofit = (TextView) dialogmsg.findViewById(R.id.textViewprofit);
+			textViewprofit.setText("???");
+		}
 		
 		//52 week
 		TextView textView52hl = (TextView) dialogmsg.findViewById(R.id.textView52hl);
-		textView52hl.setText(stocksplit[15]);
+		textView52hl.setText(stocksplit[6]);
 	
 		
 		//1 day chart
@@ -636,8 +654,7 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
 		dialogmsg.show();
 		
 		}else {
-			 Toast.makeText(MainTab.this,MainTab.this.getString(R.string.maintabnocode), Toast.LENGTH_LONG).show();
-			 }
+			Toast.makeText(MainTab.this,MainTab.this.getString(R.string.interneterror), Toast.LENGTH_LONG).show();}
 		
 		
 	}//end msg dialog
@@ -906,8 +923,12 @@ public class MainTab extends TabActivity implements OnTabChangeListener {
    	   
       }//end halder msg
       
-
-      
+	/*	@Override
+		protected void onDestroy() {
+		super.onDestroy();
+		db.close();
+		}
+      */
 }//end class
 
 

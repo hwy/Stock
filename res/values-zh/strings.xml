@@ -104,7 +104,7 @@
          
 	<string name="indexload">讀取中</string>
   
-	<string name="interneterror">連線出現問題,請稍後再試</string>
+	<string name="interneterror">錯誤股票號或連線出現問題,請稍後再試</string>
         
         <string name="indexhk">香港指數</string>
         <string name="indexcn">中國指數</string>
@@ -132,9 +132,9 @@
 
        <string-array name="location">
 		<item>香港</item>
+		<item>美國</item>
 		<item>上海</item>
 		<item>深圳</item>
-		<item>美國</item>
 		<item>台灣</item>
 		</string-array>
 
